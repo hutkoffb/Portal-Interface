@@ -5,7 +5,6 @@
 import random as rand
 import csv
 
-
 ################################################################################################
 # Function: 
 # Description: 
@@ -17,7 +16,7 @@ import csv
 def login_info():
     # Using csv reader
     rows = []
-    with open("LoginInterface/userInfo.csv", 'r') as file:
+    with open("userInfo.csv", 'r') as file:
         csvreader = csv.reader(file)
         header = next(csvreader)
         for row in csvreader:
@@ -43,7 +42,6 @@ def username_input():
             return username
         except:
             print("ERROR: Username is not of type string.")
-        
 
 ################################################################################################
 # Function: username_check
@@ -62,9 +60,6 @@ def username_check(user_info, username):
             print("Valid Username")
             return count1
         count1 += 1
-    
-
-
 
 ################################################################################################
 # Function: password_input
@@ -82,6 +77,7 @@ def password_input():
             return password
         except:
             print("ERROR: Password is not of type string.")
+
 ################################################################################################
 # Function: password_check
 # Description: 
@@ -121,6 +117,5 @@ def main():
         password = password_input()
         # Checks to see if username and password match
         match = password_check(user_info, password, count1)
-        
         
 main()
