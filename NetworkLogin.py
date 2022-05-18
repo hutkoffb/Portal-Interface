@@ -4,6 +4,7 @@
 
 import random as rand
 import csv
+import time
 
 ################################################################################################
 # Function: 
@@ -91,11 +92,28 @@ def password_check(user_info, password, count1):
     
     # checks each username index and compares it to the input username
     if(password == user_info[count1][count2]):
-        print("Logging in...")
+        print("Logging in...\n")
+        time.sleep(2)
         return True
     else:
         print("Password and Username do NOT match.")
         return False
+
+
+################################################################################################
+# Function: homepage
+# Description: 
+# Parameters: n/a
+# Return Values: 
+# Pre-Conditions: n/a
+# Post-Conditions: n/a
+################################################################################################
+def homepage(username):
+    print(f"Welcome, {username}!\n")
+
+    print("Here are a list of available options:")
+    
+
 
 ################################################################################################
 # Function: main
@@ -108,6 +126,7 @@ def password_check(user_info, password, count1):
 def main():
     user_info = login_info()
     match = False
+
     while match == False:
         # Username input for user
         username = username_input()
@@ -117,5 +136,7 @@ def main():
         password = password_input()
         # Checks to see if username and password match
         match = password_check(user_info, password, count1)
-        
+    homepage(username)
+
+# Driver Code for the file
 main()
