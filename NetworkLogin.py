@@ -7,7 +7,7 @@ import csv
 import time
 
 ################################################################################################
-# Function: 
+# Function: login_info
 # Description: 
 # Parameters: n/a
 # Return Values: 
